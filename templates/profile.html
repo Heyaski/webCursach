@@ -462,6 +462,7 @@
 											<textarea
 												class="form-control"
 												name="about_me"
+												id="aboutMe"
 												placeholder="Я люблю тату мастерство, потому что..."
 												maxlength="300"
 												rows="5"
@@ -533,6 +534,8 @@
 		</div>
 		{% block extrahead %}
 		<script src="{% static 'scripts/enroll.js' %}"></script>
+		<script src="{% static 'scripts/profile.js' %}"></script>
+		<!-- Добавляем наш новый скрипт -->
 		{% endblock extrahead %}
 		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
