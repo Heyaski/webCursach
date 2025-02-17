@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Регистрация | Академия MAST</title>
+		<link rel="stylesheet" href="{% static 'style/styleLogin.css' %}" />
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			rel="shortcut icon"
+			href="https://static.tildacdn.com/img/tildafavicon.ico"
+			type="image/x-icon"
+		/>
+	</head>
+	<body>
+		<div class="wrapper">
+			<form method="post">
+				{% csrf_token %}
+				<h1 class="title-login">Регистрация</h1>
+
+				{% if messages %}
+				<div class="messages">
+					{% for message in messages %}
+					<div class="alert alert-{{ message.tags }}">{{ message }}</div>
+					{% endfor %}
+				</div>
+				{% endif %}
+
+				<!-- Поле логин -->
+				<div class="input-box">
+					<input
+						type="text"
+						name="login"
+						placeholder="Логин"
+						pattern="[A-Za-z]{4,}"
+						maxlength="15"
+						title="Логин должен содержать только английские буквы и быть длиной не менее 4 символов."
+						required
+					/>
+					<i class="bx bxs-user"></i>
+				</div>
+
+				<div class="input-box">
+					<input
+						type="email"
+						name="email"
+						placeholder="Почта"
+						pattern="^[^\s@]+@[^\s@]+\.(ru|com)$"
+						title="Введите корректный адрес электронной почты, который заканчивается на .ru или .com и не содержит пробелов."
+						required
+					/>
+					<i class="bx bxs-envelope"></i>
+				</div>
+
+				<!-- Поле пароль -->
+				<div class="input-box">
+					<input
+						type="password"
+						name="password"
+						placeholder="Пароль"
+						minlength="6"
+						title="Пароль должен содержать не менее 6 символов."
+						required
+					/>
+					<i class="bx bxs-lock-alt"></i>
+				</div>
+
+				<!-- Поле повтор пароля -->
+				<div class="input-box">
+					<input
+						type="password"
+						name="confirm_password"
+						placeholder="Повторите пароль"
+						required
+					/>
+					<i class="bx bxs-lock-alt"></i>
+				</div>
+				<div class="agree">
+					<label class="boxinfo">
+						<input
+							class="box"
+							type="checkbox"
+							name="data_processing_agreement"
+							required
+						/>
+						<a
+							class="infotext"
+							href="{% static 'files/Соглашение_об_обработке_персональных_данных.docx' %}"
+							download
+							>Я соглашаюсь на обработку персональных данных.</a
+						>
+					</label>
+				</div>
+				<!-- Кнопка отправки -->
+				<button type="submit" class="btn">Зарегистрироваться</button>
+
+				<div class="register-link">
+					<p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+					<a href="{% url 'home' %}">Вернуться на главную</a>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

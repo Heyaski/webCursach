@@ -1,0 +1,82 @@
+Content-Type: multipart/alternative;
+ boundary="===============1752831847141367116=="
+MIME-Version: 1.0
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUgZW1haWwg0LTQu9GPINCQ0LrQsNC0?=
+ =?utf-8?b?0LXQvNC40LggTUFTVA==?=
+From: webmaster@localhost
+To: stavchig@mail.ru
+Date: Sun, 16 Feb 2025 13:15:25 -0000
+Message-ID: <173971172555.69246.7922269896353414135@1.0.0.127.in-addr.arpa>
+
+--===============1752831847141367116==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+
+
+	
+		
+			body {
+				font-family: Arial, sans-serif;
+			}
+			.button {
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: #7140f4;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+		
+	
+	
+		Здравствуйте, heyaski!
+		
+			Спасибо за регистрацию в Академии MAST. Для подтверждения вашего email,
+			пожалуйста, перейдите по ссылке:
+		
+		Подтвердить email
+		Если кнопка не работает, скопируйте эту ссылку в браузер:
+		http://127.0.0.1:8000/verify/ca6f0f57-671b-439e-b86c-b0b515e977d3
+	
+
+
+--===============1752831847141367116==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+			}
+			.button {
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: #7140f4;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Здравствуйте, heyaski!</h2>
+		<p>
+			Спасибо за регистрацию в Академии MAST. Для подтверждения вашего email,
+			пожалуйста, перейдите по ссылке:
+		</p>
+		<p><a href="http://127.0.0.1:8000/verify/ca6f0f57-671b-439e-b86c-b0b515e977d3" class="button">Подтвердить email</a></p>
+		<p>Если кнопка не работает, скопируйте эту ссылку в браузер:</p>
+		<p>http://127.0.0.1:8000/verify/ca6f0f57-671b-439e-b86c-b0b515e977d3</p>
+	</body>
+</html>
+
+--===============1752831847141367116==--
+
+-------------------------------------------------------------------------------

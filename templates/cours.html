@@ -1,0 +1,293 @@
+{% load static %} {% load custom_filters %}
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static 'style/styleCours.css' %}" />
+		<link
+			rel="shortcut icon"
+			href="https://static.tildacdn.com/img/tildafavicon.ico"
+			type="image/x-icon"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<title>Обучение | Академия MAST</title>
+	</head>
+	<body>
+		<header class="header">
+			<a href="{% url 'home' %}" class="logo">MAST</a>
+
+			<input type="checkbox" id="check" />
+			<label for="check" class="icons">
+				<i class="bx bx-menu" id="menu-icon"></i>
+				<i class="bx bx-x" id="close-icon"></i>
+			</label>
+
+			<nav class="navbar">
+				<a href="{% url 'home' %}" style="--i: 0">ГЛАВНАЯ</a>
+				<a href="{% url 'profiles' %}" style="--i: 4">МОЙ АККАУНТ</a>
+			</nav>
+		</header>
+		<div class="courses-conteiner">
+			<div class="courses-text">
+				<h1 class="title-courses">КУРСЫ</h1>
+				<p class="suptitle-courses">
+					В академии MAST представлены три онлайн-курса, которые помогут вам
+					освоить искусство татуировки с нуля или развить существующие навыки.
+				</p>
+			</div>
+			<div class="courses">
+				<div class="cours-first">
+					<img
+						class="imag-background-cours"
+						src="../static/media/background-cours-first.jpeg"
+						alt=""
+					/>
+					<div class="cours-left">
+						<h1 class="title-cours">Первый курс: Мастерство с нуля</h1>
+						<h1 class="title-cours-master">
+							Ведущий преподаватель: Максим Пигментов
+						</h1>
+						<p class="suptitle-cours">
+							Курс для начинающих, где вы изучите основы искусства татуировки с
+							нуля. Подходит для тех, кто только делает первые шаги в профессии.
+							Мы подробно разберем технику работы с оборудованием, основы
+							безопасности и принципы создания простых дизайнов. Вы получите
+							базовые знания, чтобы уверенно начать свой путь в тату-индустрии.
+						</p>
+						<p class="time-cours">
+							Длительность курса: 6 видеоуроков по 50+ минут.
+						</p>
+					</div>
+					<div class="cours-right">
+						<ul class="cours-warp">
+							<li class="cours-parag">Освоение оборудования</li>
+							<li class="cours-parag">Гигиена и безопасность</li>
+							<li class="cours-parag">Создание контура</li>
+							<li class="cours-parag">Работа с кожей</li>
+							<li class="cours-parag">Простые дизайны</li>
+							{% with status=enrollment_status|get_item:"course-1" %}
+							<div class="enrollment-container">
+								{% if status == 'pending' %}
+								<div class="enrollment-status pending">
+									Ожидает подтверждения
+								</div>
+								{% endif %} {% if status == 'approved' %}
+								<div class="enrollment-status approved">Вы уже обучаетесь</div>
+								{% endif %} {% if not status %}
+								<a href="#openModal" class="enroll-btn" data-id="course-1"
+									>Записаться на курс</a
+								>
+								{% endif %}
+							</div>
+							{% endwith %}
+						</ul>
+					</div>
+				</div>
+				<div class="cours-second">
+					<img
+						class="imag-background-cours"
+						src="../static/media/background-cours-second.jpeg"
+						alt=""
+					/>
+					<div class="cours-left">
+						<h1 class="title-cours">Второй курс: От контуров к шедеврам</h1>
+						<h1 class="title-cours-master">
+							Ведущий преподаватель: Виктор Альва
+						</h1>
+						<p class="suptitle-cours">
+							Курс для мастеров среднего уровня, которые хотят углубить свои
+							знания и освоить более сложные техники. Здесь вы научитесь
+							работать с объемом, создавать плавные переходы и улучшать качество
+							линий. Курс включает практические занятия, позволяющие отточить
+							мастерство и уверенно выполнять сложные элементы.
+						</p>
+						<p class="time-cours">
+							Длительность курса: 6 видеоуроков по 50+ минут.
+						</p>
+					</div>
+					<div class="cours-right">
+						<ul class="cours-warp">
+							<li class="cours-parag">Техника теней</li>
+							<li class="cours-parag">Детализация</li>
+							<li class="cours-parag">Работа с цветом</li>
+							<li class="cours-parag">Исправление ошибок</li>
+							<li class="cours-parag">Проработка сложных эскизов</li>
+							{% with status=enrollment_status|get_item:"course-2" %}
+							<div class="enrollment-container">
+								{% if status == 'pending' %}
+								<div class="enrollment-status pending">
+									Ожидает подтверждения
+								</div>
+								{% endif %} {% if status == 'approved' %}
+								<div class="enrollment-status approved">Вы уже обучаетесь</div>
+								{% endif %} {% if not status %}
+								<a href="#openModal" class="enroll-btn" data-id="course-2"
+									>Записаться на курс</a
+								>
+								{% endif %}
+							</div>
+							{% endwith %}
+						</ul>
+					</div>
+				</div>
+				<div class="cours-third">
+					<img
+						class="imag-background-cours"
+						src="../static/media/background-cours-third.jpeg"
+						alt=""
+					/>
+					<div class="cours-left">
+						<h1 class="title-cours">Третий курс: Искусство на коже</h1>
+						<h1 class="title-cours-master">
+							Ведущий преподаватель: Екатерина Филина
+						</h1>
+						<p class="suptitle-cours">
+							Курс для профессионалов, которые хотят выйти на новый уровень
+							мастерства. Программа сфокусирована на уникальных авторских
+							стилях, сложных композициях и проработке больших проектов. Вы
+							научитесь создавать сложные художественные работы, которые станут
+							визитной карточкой вашего стиля.
+						</p>
+						<p class="time-cours">
+							Длительность курса: 6 видеоуроков по 50+ минут.
+						</p>
+					</div>
+					<div class="cours-right">
+						<ul class="cours-warp">
+							<li class="cours-parag">Авторский стиль</li>
+							<li class="cours-parag">Композиция и масштаб</li>
+							<li class="cours-parag">Реалистичные детали</li>
+							<li class="cours-parag">Работа с клиентом</li>
+							<li class="cours-parag">Портфолио профессионала</li>
+							{% with status=enrollment_status|get_item:"course-3" %}
+							<div class="enrollment-container">
+								{% if status == 'pending' %}
+								<div class="enrollment-status pending">
+									Ожидает подтверждения
+								</div>
+								{% endif %} {% if status == 'approved' %}
+								<div class="enrollment-status approved">Вы уже обучаетесь</div>
+								{% endif %} {% if not status %}
+								<a href="#openModal" class="enroll-btn" data-id="course-3"
+									>Записаться на курс</a
+								>
+								{% endif %}
+							</div>
+							{% endwith %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="openModal" class="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title">Запись на курс</h3>
+						<a href="#close" title="Close" class="close">×</a>
+					</div>
+					<div class="wrapper">
+						<form
+							id="enrollmentForm"
+							method="post"
+							action="{% url 'enroll_course' %}"
+						>
+							{% csrf_token %}
+							<input type="hidden" name="course_id" id="courseId" />
+
+							<!-- Добавим отладочную информацию -->
+							<div style="display: none">
+								Debug info: User: {{ user.username }} Profile: {{
+								user_profile.id }} First name: {{ user.russian_first_name }}
+								Last name: {{ user.russian_last_name }}
+							</div>
+
+							<div class="input-box">
+								<input
+									type="text"
+									name="first_name"
+									value="{{ user.russian_first_name|default:'' }}"
+									placeholder="Имя"
+								/>
+							</div>
+							<div class="input-box">
+								<input
+									type="text"
+									name="last_name"
+									value="{{ user.russian_last_name|default:'' }}"
+									placeholder="Фамилия"
+								/>
+							</div>
+
+							<!-- Поля для заполнения -->
+							<div class="input-box">
+								<input
+									type="tel"
+									id="phone"
+									name="phone"
+									class="form-control"
+									value="{{ user_profile.phone|default:'' }}"
+									placeholder="+7 (___) ___-__-__"
+									pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+									title="Введите корректный номер телефона в формате +7 (777) 777-77-77"
+									required
+								/>
+							</div>
+							<div class="input-box">
+								<input
+									type="text"
+									id="cityInput"
+									name="city"
+									value="{{ user_profile.city|default:'' }}"
+									placeholder="Город"
+									required
+								/>
+								<div id="suggestions" class="suggestions"></div>
+							</div>
+							<div class="input-box">
+								<input
+									type="text"
+									name="address"
+									placeholder="Адрес"
+									required
+								/>
+							</div>
+
+							<button type="submit" class="btn">Отправить</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{% block extrahead %}
+		<script src="{% static 'scripts/enroll.js' %}"></script>
+		{% endblock extrahead %}
+
+		<footer>
+			<section class="footer-section">
+				<div class="footer-conteiner">
+					<div class="footer-top">
+						<div class="footer-conection">
+							<h1 class="title-con">Связаться с нами</h1>
+							<a class="nav" href="#about">Вконтакте</a>
+							<a class="nav" href="#masters">Telegram</a>
+							<a class="nav" href="#courses">WhatsApp</a>
+							<div class="phone-number-footer">+7 (950) 077 92 19</div>
+						</div>
+						<div class="footer-address">
+							<h1 class="title-address">Наш главный офис</h1>
+							<p class="suptitle-address">
+								г. Владивосток, Проспект Красного Знамени, д. 133/3
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</footer>
+	</body>
+</html>

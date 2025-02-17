@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');
+
+* {
+	font-family: 'Jura', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+body {
+	margin-top: 20px;
+	display: flex;
+	min-height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+		url(../media/background-login.jpeg) no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+html {
+	overflow-y: scroll; /* Сохраняет вертикальную прокрутку */
+	scroll-behavior: smooth; /* Включает плавное прокручивание */
+}
+
+::-webkit-scrollbar {
+	display: none; /* Скрывает полосу прокрутки в браузерах на основе WebKit (Chrome, Safari) */
+}
+
+body {
+	-ms-overflow-style: none; /* Скрывает полосу прокрутки в Internet Explorer */
+}
+.form-control textarea {
+	resize: none;
+	height: 150px; /* Высота текстового поля */
+}
+.footer-account {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	color: white;
+}
+.font-weight-bold.py-3.mb-4 a {
+	color: white;
+	font-weight: bold;
+}
+
+.ui-w-80 {
+	width: 80px !important;
+	height: auto;
+}
+
+.btn-default {
+	border-color: rgba(24, 28, 33, 0.1);
+	background: rgba(0, 0, 0, 0);
+	color: #4e5155;
+}
+
+label.btn {
+	margin-bottom: 0;
+}
+.btn.btn-primary {
+	color: #fff;
+	background-color: #7140f4;
+	border-color: #7140f4;
+}
+
+.btn.btn-default {
+	color: white;
+}
+
+.btn {
+	cursor: pointer;
+}
+.form-label {
+	color: white;
+}
+
+.card.overflow-hidden {
+	background-clip: padding-box;
+	box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
+	background: transparent;
+	backdrop-filter: blur(50px);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.row-bordered {
+	overflow: hidden;
+}
+.list-group-item-action {
+	color: white;
+}
+.account-settings-fileinput {
+	position: absolute;
+	visibility: hidden;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+
+.account-settings-links .list-group-item.active {
+	font-weight: bold !important;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+	background: transparent !important;
+}
+
+.account-settings-multiselect ~ .select2-container {
+	width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+	padding: 0.85rem 1.5rem;
+	border-color: white !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+	color: #7140f4 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+	padding: 0.85rem 1.5rem;
+	border-color: white !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+	color: #7140f4 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+	padding: 0.85rem 1.5rem;
+	border-color: white !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+	color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+	color: white !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+	padding: 0.85rem 1.5rem;
+	border-color: white !important;
+}
+.list-group-item.list-group-item-action {
+	background: transparent;
+	backdrop-filter: blur(50px);
+	color: white;
+}
+.list-group-item.list-group-item-action:hover {
+	background: transparent;
+	backdrop-filter: blur(50px);
+	color: white;
+}
+.mb-4 {
+	color: white;
+}
+.switcher-label {
+	color: white;
+}
+
+.form-control {
+	background: transparent !important;
+	border: 2px solid rgba(255, 255, 255, 0.2) !important;
+	border-radius: 40px !important;
+	font-size: 16px !important;
+	color: #fff !important;
+}
+.custom-select {
+	background: transparent !important;
+	border: 2px solid rgba(255, 255, 255, 0.2) !important;
+	border-radius: 40px !important;
+	font-size: 16px !important;
+	color: #fff !important;
+}
+option {
+	color: #4e5155;
+}
+.switcher-input {
+	background-color: white;
+}
+.alert-warning {
+	background-color: rgba(191, 97, 247, 0.5) !important;
+	border: 2px solid rgba(255, 255, 255, 0.2) !important;
+	border-radius: 40px !important;
+	font-size: 16px !important;
+	color: #fff !important;
+}
+.alert-warning a {
+	color: white;
+	font-weight: bold;
+}
+.alert-warning a:hover {
+	color: white;
+}
+.form-group input::placeholder {
+	color: #c7c7c7;
+}
+
+.form-group textarea::placeholder {
+	color: #c7c7c7;
+}
+
+/* Обновляем стили для подсказок городов */
+.suggestions {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	max-height: 150px;
+	overflow-y: auto;
+	width: 100%;
+	z-index: 1000;
+	margin-top: 5px;
+}
+
+/* Стили для списка городов */
+.suggestions {
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.95);
+	border: 1px solid rgba(113, 64, 244, 0.2);
+	border-radius: 0 0 10px 10px;
+	max-height: 150px;
+	overflow-y: auto;
+	width: 100%;
+	z-index: 1000;
+	margin-top: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+	padding: 8px 12px;
+	color: #4e5155;
+	cursor: pointer;
+}
+
+.suggestion-item:hover {
+	background-color: rgba(113, 64, 244, 0.1);
+}
+
+.suggestions div {
+	padding: 10px;
+	cursor: pointer;
+	color: black;
+}
+
+.suggestions div:hover {
+	background-color: rgba(113, 64, 244, 0.5);
+}
+
+/* Стили для input-box */
+.input-box {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+/* Специальные стили для поля ввода города */
+.input-box input[name='city'] {
+	border-radius: 40px !important;
+	margin-bottom: 0 !important;
+}
+
+.input-box input {
+	width: 100%;
+	height: calc(1.5em + 0.75rem + 2px);
+	margin-bottom: 1rem;
+	background: transparent;
+	outline: none;
+	border: none;
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: 40px;
+	font-size: 16px;
+	color: white;
+	padding-left: 12px;
+}
+
+.input-box input::placeholder {
+	color: #c7c7c7;
+}
+label.btn.btn-outline-primary {
+	color: #ffffff;
+	border-color: #ffffff;
+}
+label.btn.btn-outline-primary:hover {
+	background-color: rgba(133, 54, 218); /* Тень при наведении */
+}
+
+.input-box i {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+}
+
+/* Слой затемнения */
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 998;
+	display: none;
+}
+/* Активный фон затемнения */
+.modal-backdrop.active {
+	display: block;
+}
+/* Модальное окно */
+.modal-window {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(135deg, #6e45e2, #88d3ce);
+	color: #fff;
+	border-radius: 10px;
+	padding: 30px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	max-width: 400px;
+	text-align: center;
+	display: none;
+}
+/* Активное окно */
+.modal-window.active {
+	display: block;
+}
+/* Кнопки */
+.modal-window button {
+	margin: 10px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.modal-window .btn-confirm {
+	color: #fff;
+}
+.modal-window .btn-cancel {
+	color: #fff;
+}
+#account-cours .card-body {
+	color: white;
+}
+#account-cours .card-body h5 {
+	color: #ffffff;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+#courses-list .list-group-item {
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(20px);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	color: #ffffff;
+	margin-bottom: 15px;
+}
+#courses-list .list-group-item h6 {
+	margin-bottom: 5px;
+	font-weight: 500;
+}
+#courses-list .badge {
+	font-size: 0.85rem;
+	padding: 6px 10px;
+	border-radius: 10px;
+}
+#courses-list .badge-secondary {
+	background-color: rgba(119, 163, 201, 0.7);
+}
+#courses-list .badge-warning {
+	background-color: rgba(90, 60, 200, 0.7);
+	color: white;
+}
+#courses-list .badge-success {
+	background-color: rgba(147, 51, 196, 0.7);
+}
+#courses-list .btn-danger {
+	background-color: rgba(90, 60, 200, 0.7);
+	border: none;
+	border-radius: 15px;
+	transition: background-color 0.3s;
+}
+#courses-list .btn-danger:hover {
+	background-color: rgba(147, 51, 196, 1);
+}
+/* Стили для модального окна */
+#confirmationModal .modal-content {
+	background: rgb(170, 150, 221);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	color: #fff;
+}
+#confirmationModal .modal-header {
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+#confirmationModal .modal-footer {
+	border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+#confirmationModal .btn-secondary {
+	background-color: rgba(108, 117, 125, 0.7);
+	border: none;
+	border-radius: 15px;
+	transition: background-color 0.3s;
+}
+#confirmationModal .btn-secondary:hover {
+	background-color: rgba(108, 117, 125, 1);
+}
+#confirmationModal .btn-danger {
+	background-color: rgba(147, 51, 196, 0.7);
+	border: none;
+	border-radius: 15px;
+	transition: background-color 0.3s;
+}
+#confirmationModal .btn-danger:hover {
+	background-color: rgba(147, 51, 196, 1);
+}
+/* Адаптивность */
+@media (max-width: 576px) {
+	#courses-list .list-group-item {
+		padding: 15px;
+	}
+	#courses-list .btn-danger {
+		padding: 5px 10px;
+	}
+}
+/* Стили для модального окна logoutConfirmationModal */
+#logoutConfirmationModal .modal-content {
+	background: rgb(170, 150, 221);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	color: #fff;
+}
+#logoutConfirmationModal .modal-header {
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+#logoutConfirmationModal .modal-footer {
+	border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+#logoutConfirmationModal .btn-secondary {
+	background-color: rgba(108, 117, 125, 0.7);
+	border: none;
+	border-radius: 15px;
+	transition: background-color 0.3s;
+}
+#logoutConfirmationModal .btn-secondary:hover {
+	background-color: rgba(108, 117, 125, 1);
+}
+#logoutConfirmationModal .btn-danger {
+	background-color: rgba(147, 51, 196, 0.7);
+	border: none;
+	border-radius: 15px;
+	transition: background-color 0.3s;
+}
+#logoutConfirmationModal .btn-danger:hover {
+	background-color: rgba(147, 51, 196, 1);
+}
+
+/* Адаптивность */
+@media (max-width: 576px) {
+	#courses-list .list-group-item {
+		padding: 15px;
+	}
+	#courses-list .btn-danger {
+		padding: 5px 10px;
+	}
+}
+
+@media (max-width: 330px) {
+	.font-weight-bold.py-3.mb-4 {
+		font-size: 20px;
+	}
+	.font-weight-bold.py-3.mb-4 a {
+		margin: 0;
+		padding: 0;
+	}
+	.footer-account {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+}
+
+.enrollment-status {
+	margin-top: 10px;
+	padding: 8px;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+.enrollment-status.pending {
+	background-color: rgba(90, 60, 200, 0.7);
+	color: white;
+}
+
+.enrollment-status.approved {
+	background-color: rgba(147, 51, 196, 0.7);
+	color: white;
+}
+
+.enrollment-status.not-enrolled {
+	background-color: rgba(108, 117, 125, 0.7);
+	color: white;
+}
+
+.btn-sm.ml-2 {
+	margin-left: 8px;
+}
+
+/* Обновленные стили для сообщений */
+.alert {
+	padding: 10px 20px;
+	margin-bottom: 15px;
+	border-radius: 10px;
+	border: 1px solid transparent;
+}
+
+.alert-success {
+	background-color: rgba(40, 167, 69, 0.1) !important;
+	border-color: rgba(40, 167, 69, 0.2) !important;
+	color: #28a745 !important;
+}
+
+.alert-error,
+.alert-danger {
+	background-color: rgba(220, 53, 69, 0.1) !important;
+	border-color: rgba(220, 53, 69, 0.2) !important;
+	color: #dc3545 !important;
+}

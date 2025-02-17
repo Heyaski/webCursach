@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<h2>Поздравляем! Ваша заявка одобрена</h2>
+		<p>Здравствуйте, {{ enrollment.user.russian_first_name }}!</p>
+		<p>
+			Ваша заявка на курс "{{ enrollment.course.get_name_display }}" была
+			одобрена.
+		</p>
+		<p>К письму прикреплен файл с материалами курса.</p>
+		<p>Желаем успешного обучения!</p>
+		<br />
+		<p>С уважением,<br />Команда Академии MAST</p>
+	</body>
+</html>

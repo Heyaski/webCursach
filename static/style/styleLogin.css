@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+
+* {
+	font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(../media/background-login.jpeg) no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+html {
+    overflow-y: scroll; /* Сохраняет вертикальную прокрутку */
+    scroll-behavior: smooth; /* Включает плавное прокручивание */
+}
+    
+::-webkit-scrollbar {
+    display: none; /* Скрывает полосу прокрутки в браузерах на основе WebKit (Chrome, Safari) */
+}
+    
+body {
+    -ms-overflow-style: none; /* Скрывает полосу прокрутки в Internet Explorer */
+}
+
+.wrapper {
+	width: 420px;
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, .2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	backdrop-filter: blur(20px);
+	color: #fff;
+	border-radius: 10px;
+	padding: 30px 40px;
+}
+
+.wrapper h1 {
+	font-size: 36px;
+	text-align: center;
+}
+
+.wrapper .input-box {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin: 30px 0;
+}
+
+.input-box input {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	outline: none;
+	border: none;
+	border: 2px solid rgba(255, 255, 255, .2);
+	border-radius: 40px;
+	font-size: 16px;
+	color: #fff;
+	padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+	color: #fff;
+}
+
+.input-box i {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+}
+
+.remember-fogot {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14.5px;
+	margin: -15px 0 15px;
+}
+
+.remember-fogot label input {
+	accent-color: #fff;
+	margin-right: 3px;
+}
+
+.remember-fogot a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.remember-fogot a:hover {
+	text-decoration: underline;
+}
+
+.wrapper .btn {
+	width: 100%;
+	height: 45px;
+	background: #fff;
+	border: none;
+	outline: none;
+	border-radius: 40px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	cursor: pointer;
+	font-size: 16px;
+	color: #333;
+	font-weight: 600;
+	transition: .3s;
+}
+
+.wrapper .btn:hover {
+	background: #ebe6e6;
+}
+
+.wrapper .register-link {
+	font-size: 14.5px;
+	text-align: center;
+	margin: 20px 0px 15px;
+}
+
+.register-link p a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+.register-link a {
+	color: #fff;
+	text-decoration: none;
+}
+.register-link{
+    line-height: 30px;
+}
+.register-link a:hover {
+	text-decoration: underline;
+}
+.register-link p a:hover {
+	text-decoration: underline;
+}
+.title-login{
+    font-weight: bold;
+}
+.agree{
+	width: 100%;
+	margin-bottom: 30px;
+}
+.boxinfo{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 14px;
+	color: #fff;
+}
+
+.box{
+	width: 20px;
+	margin-right: 10px; 
+	accent-color: #fff;
+}
+.infotext{
+	color: #fff; 
+	text-decoration: underline; 
+	margin-left: 5px;
+}

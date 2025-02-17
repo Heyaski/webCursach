@@ -1,0 +1,326 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static 'style/style.css' %}" />
+		<link
+			rel="shortcut icon"
+			href="https://static.tildacdn.com/img/tildafavicon.ico"
+			type="image/x-icon"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<title>Академия MAST</title>
+	</head>
+	<body>
+		<header class="header">
+			<a href="#" class="logo">MAST</a>
+
+			<input type="checkbox" id="check" />
+			<label for="check" class="icons">
+				<i class="bx bx-menu" id="menu-icon"></i>
+				<i class="bx bx-x" id="close-icon"></i>
+			</label>
+
+			<nav class="navbar">
+				<a href="#about" style="--i: 0">О НАС</a>
+				<a href="#masters" style="--i: 1">МАСТЕРА</a>
+				<a href="#courses" style="--i: 2">КУРСЫ</a>
+				<a href="{% url 'courses' %}" style="--i: 3">ОБУЧЕНИЕ</a>
+				<a href="{% url 'profiles' %}" style="--i: 4">МОЙ АККАУНТ</a>
+			</nav>
+		</header>
+
+		<section class="greetings-section">
+			<div class="greetings-conteiner">
+				<div class="text_greet">
+					<h1 class="title_greet">ДОБРО ПОЖАЛОВАТЬ В АКАДЕМИЮ MAST</h1>
+				</div>
+				<img
+					class="greet-background"
+					src="../static/media/background_greet.jpeg"
+					alt=""
+				/>
+			</div>
+		</section>
+		<section id="about" class="about-section">
+			<div class="about-container">
+				<h1 class="title-about">О НАС</h1>
+				<p class="suptitle-about">
+					АКАДЕМИЯ MAST — это современная онлайн-платформа для обучения
+					искусству татуировки. Мы предлагаем три уникальных курса, которые
+					подойдут как начинающим мастерам, так и тем, кто хочет углубить свои
+					профессиональные знания. Наша миссия — сделать обучение доступным,
+					качественным и увлекательным.
+				</p>
+			</div>
+		</section>
+		<section id="masters" class="masters-section">
+			<div class="masters-conteiner">
+				<div class="masters-text">
+					<h1 class="title-masters">МАСТЕРА</h1>
+					<p class="suptitle-masters">
+						Мы собрали лучших профессионалов, чтобы поделиться с вами своим
+						опытом, авторскими техниками и секретами мастерства. Здесь вы
+						найдете курсы для новичков, совершенствующих навыки мастеров и тех,
+						кто хочет достичь профессионального уровня.
+					</p>
+				</div>
+				<div class="masters">
+					<ul class="list-masters">
+						<li class="master-first">
+							<img
+								class="imag-master"
+								src="../static/media/master-max.jpg"
+								alt=""
+							/>
+							<h1 class="name-master">Максим Пигментов</h1>
+							<p class="suptitle-master">
+								Максим разработал курс, идеально подходящий для тех, кто только
+								начинает свой путь в мире тату. Он поможет вам освоить базовые
+								навыки: от выбора оборудования до работы с тонкими линиями и
+								тенями. Максим делится секретами, которые помогут избежать
+								распространенных ошибок и сразу начать создавать качественные
+								работы.
+							</p>
+						</li>
+						<li class="master-second">
+							<img
+								class="imag-master"
+								src="../static/media/master-victor.jpg"
+								alt=""
+							/>
+							<h1 class="name-master">Виктор Альва</h1>
+							<p class="suptitle-master">
+								Курс Виктора подходит для тех, кто уже освоил основы татуировки
+								и хочет выйти на новый уровень. Здесь вы изучите технику работы
+								с цветами, создание плавных переходов и композиционное
+								построение сложных рисунков. Алексей подробно объясняет, как
+								сделать каждую работу выразительной, а цвет – насыщенным и
+								долговечным.
+							</p>
+						</li>
+						<li class="master-third">
+							<img
+								class="imag-master"
+								src="../static/media/master-katia.jpg"
+								alt=""
+							/>
+							<h1 class="name-master">Екатерина Филина</h1>
+							<p class="suptitle-master">
+								Екатерина разработала курс для опытных мастеров, которые хотят
+								совершенствовать свои навыки и добавлять в работы элегантность и
+								утонченность. Курс сфокусирован на достижении идеальной точности
+								линий и создании уникального стиля, который выделит ваши работы
+								среди других.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section id="courses" class="courses-section">
+			<div class="courses-conteiner">
+				<div class="courses-text">
+					<h1 class="title-courses">КУРСЫ</h1>
+					<p class="suptitle-courses">
+						В академии MAST представлены три онлайн-курса, которые помогут вам
+						освоить искусство татуировки с нуля или развить существующие навыки.
+					</p>
+				</div>
+				<div class="courses">
+					<div class="cours-first">
+						<img
+							class="imag-background-cours"
+							src="../static/media/background-cours-first.jpeg"
+							alt=""
+						/>
+						<div class="cours-left">
+							<h1 class="title-cours">Первый курс: Мастерство с нуля</h1>
+							<h1 class="title-cours-master">
+								Ведущий преподаватель: Максим Пигментов
+							</h1>
+							<p class="suptitle-cours">
+								Курс для начинающих, где вы изучите основы искусства татуировки
+								с нуля. Подходит для тех, кто только делает первые шаги в
+								профессии. Мы подробно разберем технику работы с оборудованием,
+								основы безопасности и принципы создания простых дизайнов. Вы
+								получите базовые знания, чтобы уверенно начать свой путь в
+								тату-индустрии.
+							</p>
+							<p class="time-cours">
+								Длительность курса: 6 видеоуроков по 50+ минут.
+							</p>
+						</div>
+						<div class="cours-right">
+							<ul class="cours-warp">
+								<li class="cours-parag">Освоение оборудования</li>
+								<li class="cours-parag">Гигиена и безопасность</li>
+								<li class="cours-parag">Создание контура</li>
+								<li class="cours-parag">Работа с кожей</li>
+								<li class="cours-parag">Простые дизайны</li>
+							</ul>
+						</div>
+					</div>
+					<div class="cours-second">
+						<img
+							class="imag-background-cours"
+							src="../static/media/background-cours-second.jpeg"
+							alt=""
+						/>
+						<div class="cours-left">
+							<h1 class="title-cours">Второй курс: От контуров к шедеврам</h1>
+							<h1 class="title-cours-master">
+								Ведущий преподаватель: Виктор Альва
+							</h1>
+							<p class="suptitle-cours">
+								Курс для мастеров среднего уровня, которые хотят углубить свои
+								знания и освоить более сложные техники. Здесь вы научитесь
+								работать с объемом, создавать плавные переходы и улучшать
+								качество линий. Курс включает практические занятия, позволяющие
+								отточить мастерство и уверенно выполнять сложные элементы.
+							</p>
+							<p class="time-cours">
+								Длительность курса: 6 видеоуроков по 50+ минут.
+							</p>
+						</div>
+						<div class="cours-right">
+							<ul class="cours-warp">
+								<li class="cours-parag">Техника теней</li>
+								<li class="cours-parag">Детализация</li>
+								<li class="cours-parag">Работа с цветом</li>
+								<li class="cours-parag">Исправление ошибок</li>
+								<li class="cours-parag">Проработка сложных эскизов</li>
+							</ul>
+						</div>
+					</div>
+					<div class="cours-third">
+						<img
+							class="imag-background-cours"
+							src="../static/media/background-cours-third.jpeg"
+							alt=""
+						/>
+						<div class="cours-left">
+							<h1 class="title-cours">Третий курс: Искусство на коже</h1>
+							<h1 class="title-cours-master">
+								Ведущий преподаватель: Екатерина Филина
+							</h1>
+							<p class="suptitle-cours">
+								Курс для профессионалов, которые хотят выйти на новый уровень
+								мастерства. Программа сфокусирована на уникальных авторских
+								стилях, сложных композициях и проработке больших проектов. Вы
+								научитесь создавать сложные художественные работы, которые
+								станут визитной карточкой вашего стиля.
+							</p>
+							<p class="time-cours">
+								Длительность курса: 6 видеоуроков по 50+ минут.
+							</p>
+						</div>
+						<div class="cours-right">
+							<ul class="cours-warp">
+								<li class="cours-parag">Авторский стиль</li>
+								<li class="cours-parag">Композиция и масштаб</li>
+								<li class="cours-parag">Реалистичные детали</li>
+								<li class="cours-parag">Работа с клиентом</li>
+								<li class="cours-parag">Портфолио профессионала</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="present-section">
+			<div class="present-conteiner">
+				<div class="text-present">
+					<h1 class="title-present">БОНУС ОТ АКАДЕМИИ</h1>
+					<p class="suptitle-present">
+						Академия MAST заботится о своих учениках и предоставляет всё
+						необходимое для комфортного прохождения курсов онлайн. При записи вы
+						автоматически получите профессиональный стартовый набор, который
+						идеально подходит для практики и освоения навыков татуировки.
+					</p>
+				</div>
+				<div class="kit-present">
+					<div class="text-kit">
+						<h1 class="title-kit">Что входит в набор?</h1>
+						<ul class="elements-kit">
+							<li class="element">
+								Тату-машинка – лёгкая и удобная в использовании, идеальна для
+								освоения базовых техник.
+							</li>
+							<li class="element">
+								Набор картриджей – комплект из нескольких типов игл для работы с
+								контурами, тенями и заливкой.
+							</li>
+							<li class="element">
+								Искусственная кожа для практики – позволяет оттачивать навыки
+								без риска для клиентов.
+							</li>
+							<li class="element">
+								Краски для татуировки – базовый набор качественных пигментов для
+								тренировок.
+							</li>
+							<li class="element">
+								Дезинфицирующие средства и расходные материалы – перчатки,
+								колпачки для красок и одноразовые салфетки для соблюдения
+								стерильности.
+							</li>
+						</ul>
+						<p class="suptitle-kit">
+							Этот подарок не только упростит ваше обучение, но и создаст базу
+							для первых шагов в карьере тату-мастера. Академия MAST поможет вам
+							реализовать вашу мечту с комфортом и профессиональным подходом!
+						</p>
+					</div>
+					<img class="imag-kit" src="../static/media/present.jpg" alt="" />
+				</div>
+			</div>
+		</section>
+		<section class="record-section">
+			<div class="record-conteiner">
+				<h1 class="title-record">МЫ ЖДЕМ ТЕБЯ</h1>
+				<a href="{% url 'courses' %}"
+					><button class="but-record">Записаться на обучение</button></a
+				>
+			</div>
+		</section>
+		<footer>
+			<section class="footer-section">
+				<div class="footer-conteiner">
+					<div class="footer-top">
+						<div class="footer-conection">
+							<h1 class="title-con">Связаться с нами</h1>
+							<a class="nav" href="#about">Вконтакте</a>
+							<a class="nav" href="#masters">Telegram</a>
+							<a class="nav" href="#courses">WhatsApp</a>
+							<div class="phone-number-footer">+7 (950) 077 92 19</div>
+						</div>
+						<div class="footer-address">
+							<h1 class="title-address">Наш главный офис</h1>
+							<p class="suptitle-address">
+								г. Владивосток, Проспект Красного Знамени, д. 133/3
+							</p>
+						</div>
+					</div>
+					<div class="footer-center">
+						<hr />
+					</div>
+					<div class="footer-bottom">
+						<a class="nav" href="#">ГЛАВНАЯ</a>
+						<a class="nav" href="#about">О НАС</a>
+						<a class="nav" href="#masters">МАСТЕРА</a>
+						<a class="nav" href="#courses">КУРСЫ</a>
+						<a class="nav" href="">ОБУЧЕНИЕ</a>
+					</div>
+				</div>
+			</section>
+		</footer>
+		{% block extrahead %}
+		<script src="{% static 'scripts/scriptIndex.js' %}"></script>
+		{% endblock extrahead %}
+	</body>
+</html>
