@@ -154,12 +154,35 @@ def prof(request):
             return JsonResponse({'photo_url': profile.DEFAULT_PHOTO_URL})
 
         if 'save_changes' in request.POST:
-            # Обработка сохранения изменений профиля
             user = request.user
             user.russian_first_name = request.POST.get('first_name', '')
             user.russian_last_name = request.POST.get('last_name', '')
-            user.save()
-            messages.success(request, 'Изменения успешно сохранены')
+            
+            # Получаем новый email
+            new_email = request.POST.get('email', '').strip()
+            
+            # Проверяем, изменился ли email
+            if new_email and new_email != user.email:
+                # Проверяем, не занят ли email другим пользователем
+                if User.objects.filter(email=new_email).exists():
+                    messages.error(request, 'Этот email уже используется')
+                    return redirect('profiles')
+                
+                # Сохраняем новый email
+                user.email = new_email
+                user.email_verified = False  # Сбрасываем статус верификации
+                user.verification_token = uuid.uuid4()  # Генерируем новый токен
+                user.save()
+                
+                # Отправляем письмо для подтверждения
+                if send_verification_email(user):
+                    messages.success(request, 'Изменения сохранены. Пожалуйста, подтвердите новый email')
+                else:
+                    messages.warning(request, 'Изменения сохранены, но возникла проблема при отправке письма подтверждения')
+            else:
+                user.save()
+                messages.success(request, 'Изменения успешно сохранены')
+            
             return redirect('profiles')
         
         elif 'change_password' in request.POST:
